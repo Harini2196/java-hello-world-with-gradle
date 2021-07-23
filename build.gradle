@@ -28,12 +28,22 @@ dependencies {
 }
 */
 
+plugins {
+  id "org.sonarqube" version "3.3"
+}
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'application'
 
 mainClassName = 'hello.HelloWorld'
 
+sonarqube {
+    properties {
+          property "sonar.host.url", "http://3.84.132.174:9000"
+          property "sonar.sources", "src"
+        }
+}
 // tag::repositories[]
 repositories {
     mavenCentral()
@@ -61,4 +71,5 @@ dependencies {
 task wrapper(type: Wrapper) {
     gradleVersion = '3.5'
 }
+tasks['sonarqube'].dependsOn test
 // end::wrapper[]
