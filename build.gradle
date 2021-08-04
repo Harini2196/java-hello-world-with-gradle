@@ -38,13 +38,13 @@ apply plugin: 'application'
 
 mainClassName = 'hello.HelloWorld'
 
-sonarqube {
+/*sonarqube {
     properties {
-          property "sonar.host.url", "http://3.84.132.174:9000"
+         // property "sonar.host.url", "http://3.84.132.174:9000"
           property "sonar.sources", "src/main"
-		  property "sonar.login", "32bed08f624ad2bccba1f4089fa72c829581315f"
+		  //property "sonar.login", "32bed08f624ad2bccba1f4089fa72c829581315f"
         }
-}
+}*/
 // tag::repositories[]
 repositories {
     mavenCentral()
