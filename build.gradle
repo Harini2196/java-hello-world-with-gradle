@@ -30,6 +30,7 @@ dependencies {
 
 plugins {
   id "org.sonarqube" version "3.3"
+  id 'jacoco'
 }
 
 apply plugin: 'java'
@@ -37,7 +38,12 @@ apply plugin: 'eclipse'
 apply plugin: 'application'
 
 mainClassName = 'hello.HelloWorld'
-
+jacocoTestReport {
+    reports {
+        xml.enabled true
+    }
+}
+test.finalizedBy jacocoTestReport
 /*sonarqube {
     properties {
          // property "sonar.host.url", "http://3.84.132.174:9000"
